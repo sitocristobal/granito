@@ -1,0 +1,6 @@
+# Ignorar carpetas de fotos y entonrno virtual
+pictures_identified
+pitctures_unidentified
+labels_np
+labels_png
+venv
