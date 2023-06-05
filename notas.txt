@@ -1,0 +1,3 @@
+U-net
+
+Probar el modelo que utiliza SAM y realizar una última capa con mis imagenes segmentadas como último entrenamiento.
