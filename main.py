@@ -120,7 +120,7 @@ evaluate_model(model, test_loader)
 
 # Step 6: making predictions
 def predict_image(model, image):
-    model.eval():
+    model.eval()
     with torch.no_grad():
         image = transform(image).unsqueeze(0).to(device)
         output = model(image)
