@@ -14,8 +14,8 @@ def load_json(json_file):
         data = json.load(f)
     # Loads and processes the data from the JSON file according to its structure
     # Returns images and labels in the proper format
-    images = data['data']
-    labels = data['annotations']
+    images = data['image']
+    labels = data['tag']
     return images, labels
 
 # Define transformations for image pre-processing
@@ -31,7 +31,7 @@ train_images, train_labels = load_json('labels_json\labels.json')
 # Create a custom dataset
 train_dataset = DatasetFolder(train_images, train_labels, transform=transform)
 
-num_classes = 1 # NUmber of defects to detect
+num_classes = 1 # Number of defects to detect
 
 # Step 2: Define the model
 class CNN(nn.Module):
