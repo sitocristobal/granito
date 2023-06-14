@@ -1,7 +1,7 @@
 import os
 
 # Path to the folder with the images
-folder_path = 'pictures_test\RP'
+folder_path = 'labels_test\RP'
 
 # List the images
 images = os.listdir(folder_path)
