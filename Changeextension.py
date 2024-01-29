@@ -1,28 +1,28 @@
 from PIL import Image
 import os
 
-# Ruta de la carpeta que contiene las imágenes PNG y donde se guardarán las imágenes JPG
-ruta_carpeta = ""
+# Path to the folder containing the PNG images and where the JPG images will be stored
+ruta_carpeta = "labels_test\RP"
 
-# Obtener la lista de archivos en la carpeta
+# Get the list of files in the folder
 archivos = os.listdir(ruta_carpeta)
 
-# Iterar sobre los archivos en la carpeta
+# Iterate over the files in the folder
 for archivo in archivos:
-    # Comprobar si el archivo es una imagen PNG
+    # Check if the file is a PNG image
     if archivo.endswith(".png"):
-        # Generar la ruta completa del archivo PNG
+        # Generate the full path to the PNG file
         ruta_imagen_png = os.path.join(ruta_carpeta, archivo)
 
-        # Abrir la imagen PNG
+        # Open PNG image
         imagen = Image.open(ruta_imagen_png)
 
-        # Generar la ruta completa para el archivo JPG 
+        # Generate the complete path to the JPG file
         nombre_archivo = os.path.splitext(archivo)[0]
         ruta_imagen_jpg = os.path.join(ruta_carpeta, nombre_archivo + ".jpg")
 
-        # Convertir y guardar la imagen en formato JPG 
+        # Convert and save the image in JPG format
         imagen.convert("RGB").save(ruta_imagen_jpg, "JPEG")
 
-        # Cerrar la imagen
+        # Close the image
         imagen.close()
